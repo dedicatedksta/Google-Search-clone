@@ -10,7 +10,7 @@ const Microphone: FC<MicrophoneProps> = () => {
 			viewBox="0 0 24 24"
 			strokeWidth={1.5}
 			stroke="currentColor"
-			className="w-5 h-5 transition-all ease-out duration-300"
+			className="w-5 h-5 transition-all ease-out duration-300 cursor-pointer hover:text-[#9aa0a6]"
 		>
 			<path
 				strokeLinecap="round"

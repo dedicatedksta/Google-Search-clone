@@ -39,7 +39,7 @@ const Input: FC<InputProps> = ({ query, setQuery, main }) => {
 								animate={{ translateX: 0 }}
 								exit={{ translateX: 15, opacity: 0 }}
 								transition={{ duration: 0.3 }}
-								className="text-[#9aa0a6]"
+								className="text-[#9aa0a6] cursor-pointer"
 								onClick={() => setQuery("")}
 							>
 								<Close />
