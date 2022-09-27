@@ -1,24 +1,23 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { FC, useState } from "react";
+import React, { FC, useState } from "react";
 import Avatar from "../Avatar/Avatar";
 import Squares from "../Icons/Squares Icon/Squares";
 import Input from "../Input/Input";
 import styles from "./SearchHeader.module.scss";
 
 interface SearchHeaderProps {
-	defaultQuery: string;
+	query: string;
+	setQuery: React.Dispatch<React.SetStateAction<string>>;
 }
 
-const SearchHeader: FC<SearchHeaderProps> = ({ defaultQuery }) => {
+const SearchHeader: FC<SearchHeaderProps> = ({ query, setQuery }) => {
 	const router = useRouter();
 
 	const submitHandler = (e: React.ChangeEvent<HTMLFormElement>) => {
 		e.preventDefault();
 		router.push(`/search?q=${query}`);
 	};
-
-	const [query, setQuery] = useState<string>(defaultQuery);
 
 	return (
 		<header className="flex flex-col md:flex-row justify-start pt-2 md:pt-7 md:pl-16  items-center">

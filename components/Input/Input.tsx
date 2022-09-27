@@ -1,5 +1,6 @@
 import { AnimatePresence, motion } from "framer-motion";
 import React, { FC, useRef } from "react";
+import { useSimilar } from "../../hooks/useSimilar";
 import Close from "../Icons/Close Icon/Close";
 import Microphone from "../Icons/Microphone Icon/Microphone";
 import Search from "../Icons/Search Icon/Search";
@@ -12,7 +13,16 @@ interface InputProps {
 
 const Input: FC<InputProps> = ({ query, setQuery, main }) => {
 	const inputRef = useRef<HTMLInputElement>(null);
+	// const { searchHints } = useSimilar();
 	console.log(query);
+
+	const inputChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+		setQuery(e.target.value);
+		// if (e.target.value.length > 0) {
+		// 	searchHints(e.target.value);
+		// }
+	};
+
 	return (
 		<div
 			onClick={() => inputRef.current?.focus()}
@@ -25,7 +35,7 @@ const Input: FC<InputProps> = ({ query, setQuery, main }) => {
 			<Search />
 			<input
 				value={query}
-				onChange={(e) => setQuery(e.target.value)}
+				onChange={inputChangeHandler}
 				ref={inputRef}
 				type="text"
 				className=" px-3 h-full bg-transparent text-gray-300 outline-none flex-grow"

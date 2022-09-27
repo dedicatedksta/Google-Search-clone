@@ -6,6 +6,9 @@
 	.link {
 		@apply hover:underline cursor-pointer transition-all ease-out duration-200;
 	}
+	.button {
+		@apply text-white  bg-[#303134] border border-[#303134] text-xs py-1 px-3 md:py-2 md:px-4 md:text-sm rounded-md hover:border-[#686c6f] transition-all ease-in-out duration-200 cursor-pointer;
+	}
 }
 
 body {

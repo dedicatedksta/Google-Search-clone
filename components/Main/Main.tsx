@@ -1,7 +1,6 @@
 import { useRouter } from "next/router";
 import React, { FC, useState } from "react";
 import Input from "../Input/Input";
-import Button from "../ui/Button";
 
 interface MainProps {}
 
@@ -11,7 +10,9 @@ const Main: FC<MainProps> = () => {
 
 	const submitHandler = (e: React.ChangeEvent<HTMLFormElement>) => {
 		e.preventDefault();
-		router.push(`/search?q=${query}`);
+		if (query.length > 0) {
+			router.push(`/search?q=${query}`);
+		}
 	};
 
 	return (
@@ -24,8 +25,15 @@ const Main: FC<MainProps> = () => {
 			</h1>
 			<Input setQuery={setQuery} query={query} main={true} />
 			<div className="flex mx-auto mt-6 gap-4">
-				<Button>Google Search</Button>
-				<Button>I'm Feeling Lucky</Button>
+				<button className="button" type="submit">
+					Google Search
+				</button>
+				<a
+					href={`http://www.google.com/search?hl=en&btnI=I%27m+Feeling+Lucky&pws=0&q=${query}`}
+					className="button"
+				>
+					I'm Feeling Lucky
+				</a>
 			</div>
 		</form>
 	);
