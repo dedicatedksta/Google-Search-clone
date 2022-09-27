@@ -9,5 +9,5 @@
 }
 
 body {
-	@apply bg-[#202124];
+	@apply bg-[#202124] min-h-screen;
 }

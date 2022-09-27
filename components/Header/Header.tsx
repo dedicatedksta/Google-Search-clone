@@ -15,7 +15,7 @@ const Header: FC<HeaderProps> = () => {
 				<p className="link">Gmail</p>
 				<p className="link">Images</p>
 				<Squares />
-				<Avatar url="https://coaching.papareact.com/ai9" />
+				<Avatar url="https://i.ibb.co/zm3HqvR/nightwing.jpg" />
 			</div>
 		</header>
 	);
